@@ -1,10 +1,10 @@
-name = input("Введите номер вашего места ")
+name = int(input("Введите номер вашего места "))
 
-if name == "1":
+if name in range(37,54) and name % 2 != 0:
     print("Боковое нижнее")
-elif name == "2":
+elif name in range(37, 54) and name % 2 == 0:
     print("Боковое верхнее")
-elif name == "3":
+elif name in range(1,36) and name % 2 != 0:
     print("Купе нижнее")
-elif name == "4":
-    print("Купе боковое")
+elif name in range(1,36) and name % 2 == 0:
+    print("Купе верхнее")
