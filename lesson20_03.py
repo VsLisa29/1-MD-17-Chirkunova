@@ -26,19 +26,23 @@ def magic_date():
         print(f"{user_date} Это обычная дата")
 
 def lucky_ticket():
-    ticket_number = int(input("Введите номер билета "))
+    ticket_number = input("Введите номер билета: ")
 
-    if len(str(ticket_number)) % 2 != 0:
+    if len(ticket_number) % 2 != 0:
         return False
 
-    part_len = len(str(ticket_number)) // 2
-    first_part = ticket_number
-    second_part = ticket_number
-    #sum_first_part =
-    #sum_second_part =
+    part_len = int(len(ticket_number) / 2)
+    first_part = ticket_number[:part_len]
+    second_part = ticket_number[part_len:]
+    print(f"1: {first_part}")
+    print(f"2: {second_part}")
 
+    sum_first_part = sum(map(int, first_part))
+    sum_second_part = sum(map(int, second_part))
+    print(f"1: {sum_first_part}")
+    print(f"2: {sum_second_part}")
 
-    if lucky_ticket(ticket_number):
-        print(f"{ticket_number} Этот билет счастливый")
+    if sum_first_part == sum_second_part:
+        print("Этот билет счастливый!")
     else:
-        print(f"{ticket_number} Этот билет обычный")
+        print("Этот билет не счастливый.")
