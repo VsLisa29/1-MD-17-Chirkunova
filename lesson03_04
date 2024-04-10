@@ -1,31 +1,51 @@
 def task_1():
     dictionary = {'Россия': 'Москва', 'Беларусь': 'Минск', 'Германия': 'Берлин', 'Франция': 'Париж'}
-    print(f"Страны и их столицы: {dictionary}")
-
+    for key in dictionary:
+        print(key, " - ", dictionary[key],)
+    
     key = "Россия"
     capital = dictionary.get(key)
-    print(f"Столица России: {capital}")
-
+    print(f"\nСтолица России - {capital}\n")
+    
     list_keys = list(dictionary.keys())
     list_keys.sort()
     for i in list_keys:
         print(i, ':', dictionary[i])
 
 
-def task_2(word):
+def task_2():
     dictionary = {'А': 1, 'В': 1, 'Е': 1, 'И': 1, 'Н': 1, 'О': 1, 'Р': 1, 'С': 1, 'Т': 1, 'Д': 2,
                   'К': 2, 'Л': 2, 'М': 2, 'П': 2, 'У': 2, 'Б': 3, 'Г': 3, 'Ё': 3, 'Ь': 3, 'Я': 3,
                   'Й': 4, 'Ы': 4, 'Ж': 5, 'З': 5, 'Х': 5, 'Ц': 5, 'Ч': 5, 'Ш': 8, 'Э': 8, 'Ю': 8,
                   'Ф': 10, 'Щ': 10, 'Ъ': 10}
 
+    word = input("Введите слово: ")
+    
+    balls = 0
+    for letter in word.upper():
+        if letter in dictionary:
+            balls += dictionary[letter]
 
-    x = sum(dictionary.get(us_word.upper(), 0) for us_word in word)
-    return x
+    print(f"Стоимость слова {word} - {balls} очков")
 
-    x = dictionary(word)
-    print(x)
-
-task_2()
-
-#def task_3():
-#    students = {'Смирнов':'{"Китайский", "Английский", "Русский"},'Тяпкин': {"Русский", ""},'Шелепов':{"", ""}}
+def task_3():
+    students = {
+      "Смирнов": {"китайский", "английский", "русский"}, 
+      "Тяпкин": {"английский", "испанский", "китайский"}, 
+      "Шелепов": {"русский", "английский"} 
+    } 
+        
+    languages = set()
+    
+    for values in students.values():
+        languages.update(values)
+        
+    print(f"Количество языков: {len(languages)}")
+    print("Отсортированный список языков:")
+    for i in sorted(languages):
+         print(i)
+    
+    print("\nСтуденты, знающие китайский язык: ")
+    for student, languages in students.items():
+        if "китайский" in languages:
+            print(student)
