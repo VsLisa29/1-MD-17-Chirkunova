@@ -20,7 +20,6 @@ def task_2():
 
 
 def task_3():
-
     for i in range(1,6):
         img = Image.open(f'Новая папка/{i}.jpg')
         filt_img = img.filter(ImageFilter.CONTOUR)
