@@ -5,11 +5,12 @@ def task_1():
     img = Image.open('2404/открытка1.jpg')
 
     img_photo = img.crop((50, 40, 1100, 1200))
-    #img_photo.show()
-    #img_photo.save('2404/img_photo.jpg')
+    img_photo.show()
+    img_photo.save('2404/img_photo.jpg')
 
     img_text = img.crop((300, 470, 1800, 1200))
     img_text.show()
+    img_text.save('2404/img_text.jpg')
 
 task_1()
 
