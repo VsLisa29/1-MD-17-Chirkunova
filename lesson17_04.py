@@ -31,3 +31,5 @@ def task_4():
     img.paste(water, (0, 0), water)
     img.save('дом_вод.jpg')
 
+task_3()
+
